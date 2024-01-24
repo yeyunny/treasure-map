@@ -7,12 +7,12 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    children: [{ path: "/", element: <Main /> }],
+    children: [{ path: "/", element: <Main /> }]
   },
   {
     path: "/addPlace",
-    element: <AddPlace />,
-  },
+    element: <AddPlace />
+  }
 ]);
 
 export default router;
