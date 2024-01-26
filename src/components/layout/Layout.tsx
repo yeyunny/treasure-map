@@ -3,18 +3,12 @@ import { useState } from "react";
 import { RightOutlined, LeftOutlined } from "@ant-design/icons";
 import SideModal from "components/modal/SideModal";
 import Nickname from "components/Nickname";
-import { useNavigate } from "react-router-dom";
 
 const Layout = () => {
-  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
   const modalHandler = () => {
     setIsOpen((prev) => !prev);
-  };
-
-  const navigationHandler = () => {
-    navigate("/addPlace");
   };
 
   return (
@@ -35,17 +29,10 @@ const Layout = () => {
             <RightOutlined />
           </button>
         )}
-        <>
-          <div className="absolute z-40 top-4 right-4">
-            <Nickname />
-          </div>
-          <button
-            className="absolute z-40 bottom-4 right-4 bg-white text-center size-12 text-3xl rounded-full"
-            onClick={navigationHandler}
-          >
-            +
-          </button>
-        </>
+
+        <div className="absolute z-40 top-4 right-4">
+          <Nickname />
+        </div>
       </div>
       <KakaoMap />
     </div>
